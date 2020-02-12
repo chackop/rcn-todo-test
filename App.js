@@ -10,18 +10,20 @@ export default function App() {
   // });
 
   const addTodo = () => {
-    let newTodo = text;
-    let arr = todo;
-    arr.push(newTodo);
-    setTodo({ todo: arr });
-    setText({ text: "" });
+    if (text) {
+      let newTodo = text;
+      let arr = todo;
+      arr.push(newTodo);
+      setTodo(arr);
+      setText("");
+    }
   }
 
   const deleteTodo = (t) => {
     let arr = todo;
     let pos = arr.indexOf(t);
     arr.splice(pos, 1);
-    setTodo({ todo: arr });
+    setTodo(arr);
   }
 
   const renderTodos = () => {
